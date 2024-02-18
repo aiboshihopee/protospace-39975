@@ -45,7 +45,7 @@
           <% if user_signed_in? %>
             <%= form_with(model: [@prototype, @comment],local: true) do |f| %>
            <div class="field">
-               <%= f.label :comment, "コメント" %><br />
+               <%= f.label :content, "コメント" %><br />
               <%= f.text_field :content, id:"comment_content" %>
            </div>
            <div class="actions">
@@ -61,7 +61,7 @@
            <li class="comments_list">
 
            <%=  comment.content %>
-           <%= link_to comment.user.name, user_path(comment.user), class: "comment_user" %>
+           <%= link_to comment.user.name, user_path(comment.user.id), class: "comment_user" %>
           </li>
           <%end%>
                    <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
