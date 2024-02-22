@@ -17,7 +17,7 @@
               <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
          <div class="prototype__image">
            <% if @prototype.image.attached? %>
-           <%= image_tag @prototype.image %>
+           <%= image_tag @prototype.image, class: 'card__img' %> 
            <% end %>
          </div>
       

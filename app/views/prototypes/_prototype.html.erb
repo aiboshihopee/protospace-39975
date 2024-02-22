@@ -1,6 +1,10 @@
 <div class="card">
-  <%= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype.id)%>
-  <%#<%= image_tag message.image, class: 'message-image' if message.image.attached? %>
+  <%= link_to prototype_path(prototype.id) do %>
+    <% if prototype.image.attached? %>
+     <%= image_tag prototype.image, class: 'card__img' if prototype.image.attached? %>
+    <% end %>
+  <% end %>
+  <%#<%= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype.id)%>
   <div class="card__body">
     <%= link_to prototype.title, prototype_path(prototype.id), class: :card__title %>
     <p class="card__summary">
